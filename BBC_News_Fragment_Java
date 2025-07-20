@@ -1,0 +1,49 @@
+package com.newproj.news_app.ui.BBC;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.webkit.WebView;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
+
+import com.newproj.news_app.R;
+import com.newproj.news_app.Webviewcontroller;
+import com.newproj.news_app.databinding.FragmentHomeBinding;
+
+public class HomeFragment extends Fragment {
+
+
+    private FragmentHomeBinding binding;
+
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             ViewGroup container, Bundle savedInstanceState) {
+        HomeViewModel homeViewModel =
+                new ViewModelProvider(this).get(HomeViewModel.class);
+
+        binding = FragmentHomeBinding.inflate(inflater, container, false);
+        View root = binding.getRoot();
+
+
+        // for display the news website on our app but using this webview we redirect on news website directly
+        WebView webView = root.findViewById(R.id.webviewbbc);
+        webView.loadUrl("https://www.bbc.com/news") ;
+
+        webView.setWebViewClient(new Webviewcontroller()) ;  // implement the webviewcontroller class
+
+
+
+
+
+        return root;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
+    }
+}
