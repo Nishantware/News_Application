@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.newproj.news_app.ui.BBC.HomeFragment"
+        android:label="@string/bbc_news"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.newproj.news_app.ui.gallery.GalleryFragment"
+        android:label="@string/ALJAZEERA"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.newproj.news_app.ui.slideshow.SlideshowFragment"
+        android:label="@string/cnn_news"
+        tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/foxnewsFragment"
+        android:name="com.newproj.news_app.Fragment.FoxnewsFragment"
+        android:label="@string/fox_news"
+        tools:layout="@layout/fragment_fox_news" />
+    <fragment
+        android:id="@+id/skyNewsFragment"
+        android:name="com.newproj.news_app.Fragment.SkyNewsFragment"
+        android:label="@string/sky_news"
+        tools:layout="@layout/fragment_sky__news" />
+
+</navigation>
